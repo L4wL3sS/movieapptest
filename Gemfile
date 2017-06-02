@@ -7,9 +7,12 @@ end
 gem 'devise', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #gem 'bcrypt', '~> 3.1.11' #Devise fix
+#gem 'bcrypt', platforms: :ruby
 gem 'bcrypt'
 gem "font-awesome-rails"
 gem 'paperclip', '~> 5.1'
+# Documentation follow 02/06
+gem 'activeadmin', github: 'activeadmin'
 
 # Añadido por problema con root/aplication
 gem 'coffee-script-source', '1.8.0'
