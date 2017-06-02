@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-4">
+				<%= image_tag @movie.image.url(:medium) %>
+				<div class="table-responsive">
+					<table class="table">
+						<tbody>
+							<br>
+							<!-- <tr>
+								<td><strong>Title:</strong></td>
+								<td><%= @movie.name %></td>
+							</tr> -->
+							<!-- <tr>
+								<td><strong>Description:</strong></td>
+								<td><%= @movie.description %></td>								
+							</tr> -->
+							<tr>
+								<td><strong>Year:</strong></td>
+								<td><%= @movie.year %></td>
+							</tr>
+							<tr>
+								<td><strong>Director:</strong></td>
+								<td><%= @movie.director %></td>
+							</tr>
+							<tr>
+								<td><strong>Stars:</strong></td>
+								<td><%= @movie.stars %></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-7 col-md-offset-1">
+				<h1 class="review_title"><%= @movie.name%></h1>
+				<p><strong>Description: </strong><%= @movie.description %></p>
+				<%= render 'reviews/reviews' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if user_signed_in? %>
+	<%= link_to "Edit", edit_movie_path(@movie), :class => 'btn btn-default' %>
+	<%= link_to "Delete", movie_path(@movie),
+					method: :delete,
+					data: {confirm: 'Are you sure?'},
+					:class => 'btn btn-danger' %>
+	<%= render 'comments/comments' %>
+	<%= render 'comments/form' %>
+	<%= render 'reviews/form' %>
+<% else %>
+	<%= render 'comments/comments' %>
+<% end %>

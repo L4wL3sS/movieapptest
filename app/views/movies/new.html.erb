@@ -1,0 +1,43 @@
+<h1>Add Movie</h1>
+<%= form_for :movie, url: movies_path, html: { multipart: true } do |f| %> 
+	<!--add: html: { multipart: true } PAPERCLIP -->
+	<% if @movie.errors.any? %>
+		<% @movie.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<p>
+		<%= f.label :name %> 
+		<br>
+		<%= f.text_field(:name, {:class => 'form-control'}) %>
+	</p>
+
+	<p>
+		<%= f.label :description %> 
+		<br>
+		<%= f.text_area(:description, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.label :stars %> 
+		<br>
+		<%= f.text_field(:stars, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.label :director %> 
+		<br>
+		<%= f.text_field(:director, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.label :year %> 
+		<br>
+		<%= f.text_field(:year, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.label :image %> 
+		<br>
+		<%= f.file_field(:image, {:class => 'form-control'}) %>
+	</p>
+	<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+	</p>
+<% end %>

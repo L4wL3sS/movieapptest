@@ -1,0 +1,104 @@
+<style>
+	h1{
+		color: #DC3522;
+	}
+	p{
+		font-size: 18px;
+	}
+	table{
+		margin: 0px auto;	
+	}
+	td{
+		padding-right: 20px;
+		padding-bottom: 10px;
+	}
+	.container-contact{
+		background-color: #75a39e;
+		border-radius: 5px;
+		margin-bottom: 20px;
+	}	
+</style>									
+<h1><%= @title %></h1>
+<p>This page was created to feed the viewer's hunger for good content in trailers,critics, rankings and opinions on movies, the classic and also the newest ones in the cinemas around the world.
+</p>
+
+<p>Rating is based on the published opinions of hundreds of film and television critics - is a trusted measurement of movie quality for millions of moviegoers.It represents the percentage of professional critic reviews that are positive for a given film or television show.</p>
+<hr>
+<table>
+	<tr>
+		<td>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_40/v1496319628/inset_coin_kyvs7l.png" alt="insert_coin">
+		</td>
+		<td>
+			<p><b>Below 5 score:</b> lets be honest no need to waste pepole time.</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_40/v1496319629/bornce_coin_vthk3p.png" alt="insert_coin">
+		</td>
+		<td>
+			<p><b>Below 6 score:</b> its a good movie but there are better fish in the sea ..</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_40/v1496319629/silver_coin_oq6chf.png" alt="insert_coin">
+		</td>
+		<td>
+			<p><b>Below 8 score:</b> solid movie</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_40/v1496319629/gold_coin_md3n8f.png" alt="insert_coin">
+		</td>
+		<td>
+			<p><b>Between 8-10 score:</b> great movie you won't be wasting money</p>
+		</td>
+	</tr>
+</table>
+<hr>
+<p> 
+This page is a project sponsored by KOLAU, and is in an initial stage of developing. the final goal is for the viewers to run this page themselves instead of the developer. 
+That should be accomplished by an easy, appealing interphase that makes the viewers participate.
+</p>
+<p><b>So if you are one of these people for whom is not enough to watch, but to coment, rate or give an opinion, you can become a critic by sending the formal request down below.</b>
+</p>
+<hr>
+<div class="col-xs-12 container-contact rounded-top conctact-container-style" id="contact" ><!-- Start container-contact -->
+	<form action="" class="">
+		<!-- agrupar formularios form-group agrega espaciado-->
+		<div class="form-group">
+			<label for="nombre"><h3>Contact Us:</h3></label>
+		</div>
+		<div class="form-group">
+			<label for="nombre">Name:</label>
+			<input class="form-control" id="nombre" type="text" placeholder="name">
+		</div>				
+		<div class="form-group">
+			<label for="option">Choose relevance:</label>
+			<select class="form-control" name="" id="option">
+				<option value="">Bussines</option>
+				<option value="">Reviwer</option>
+				<option value="">Others</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<div class="input-group">
+				<label class="sr-only" for="correo">Correo:</label> <!-- class="sr-only" solo visible para dispositivos de lectura -->
+				<div class="input-group-addon">@</div> <!-- class="input-group-addon" se adiere al grupo como addon -->
+				<input class="form-control" id="correo" type="text" placeholder="e-mail"></input>
+				 <!-- class="form-control" estilo de los inputs -->
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="mensaje">Mensaje:</label>
+			<!-- <textarea class="" name="" id="mensaje" placeholder="Escribe tu mensaje:" cols="30" rows="10"></textarea> -->
+			<textarea class="form-control perfil-textarea" id="mensaje" placeholder="Write your message"></textarea>
+		</div>
+		<div class="form-group">
+			<button class="btn btn-danger disabled">Submit</button>
+		</div>
+	</form>
+</div> <!-- END container-contact -->

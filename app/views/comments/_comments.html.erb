@@ -1,0 +1,12 @@
+<h3>Comments</h3>
+<% @movie.comments.each do |comment| %>
+	<div class="well">
+		<p><strong><%= comment.username %></strong>: <%= comment.body %>
+		<% if user_signed_in? %>
+		<%= link_to '<i id="delete_1" class="fa fa-window-close" aria-hidden="true"></i>'.html_safe, [comment.movie, comment],
+				method: :delete,
+				data: {confirm: 'Are you sure?'}%>			
+		</p>
+		<% end %>
+	</div>
+<% end %>

@@ -1,0 +1,11 @@
+<th>
+	<% if movie.stars < 5 %>
+		<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319628/inset_coin_kyvs7l.png" alt="insert_coin">
+	<% elsif movie.stars <= 6 %>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/bornce_coin_vthk3p.png" alt="insert_coin">
+	<% elsif movie.stars <= 8 %>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/silver_coin_oq6chf.png" alt="insert_coin">
+	<% elsif movie.stars <= 10 %>
+			<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/gold_coin_md3n8f.png" alt="insert_coin">
+	<% end %>
+</th>

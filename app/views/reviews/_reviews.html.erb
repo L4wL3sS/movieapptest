@@ -1,0 +1,13 @@
+<% @movie.reviews.each do |review| %>
+	<div class="reviews">
+		<p><%= review.username %></p>
+		<p><%= review.rating %></p>
+		<p><%= review.body %></p>
+	</div>
+	<% if user_signed_in? %>
+		<%= link_to '<i id="delete_1" class="fa fa-window-close" aria-hidden="true"></i>'.html_safe, [review.movie, review],
+				method: :delete,
+				data: {confirm: 'Are you sure?'}%>			
+		</p>
+	<% end %>
+<% end %>

@@ -1,0 +1,96 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+/*Main colors. ref:https://color.adobe.com/es/Sea-Wolf-color-theme-782171/edit/?copy=true&base=2&rule=Custom&selected=4&name=Copia%20de%20Sea%20Wolf&mode=rgb&rgbvalues=0.862745,0.207843,0.133333,0.85098,0.796078,0.619608,0.215686,0.254902,0.25098,0.164706,0.172549,0.168627,0.117647,0.117647,0.12549&swatchOrder=0,1,2,3,4*/
+$c_main_1: #DC3522;
+$c_main_2: #D9CB9E;
+$c_main_3: #374140;
+$c_main_4: #2A2C2B;
+$c_main_5: #1E1E20;
+
+body {
+	background: $c_main_2;
+}
+
+#nav_user {
+	margin-top: 15px;
+}
+#nav_log_out {
+	margin-top: 18px;
+	margin-left: 7px;
+}
+
+.review_title {
+	margin: 0 0 20px 0;
+}
+.reviews {
+	padding: 15px 0;
+	border-bottom: 1px solid $c_main_5;
+	.star-ratting {
+		padding-bottom: 8px;
+	}
+}
+
+
+
+/*_footer styles*/
+#footer { 
+    height: auto; 
+}
+#heart{
+  color: #E55296;
+}
+#tag-name{
+  color: #41BBBE;
+}
+.footer-social li{
+   float:left;
+}
+.social-icon {
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  padding-top: 7px;
+  border-radius: 50%;
+}
+ .linked-in{
+     background-color:#007bb6;
+ }
+ .facebook{
+     background-color:#3b5998;
+ }
+ .twitter{
+     background-color:#1da1f2;
+ }
+ .google{
+     background-color:#f63e28;
+ }
+ .img-responsive{
+  margin-top: 10px;
+ }
+ #copy{
+    margin-top: 50px;
+ }
+ #sos, #sos2{
+  margin-left: 20px;
+ }
