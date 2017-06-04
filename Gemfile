@@ -8,11 +8,15 @@ gem 'devise', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #gem 'bcrypt', '~> 3.1.11' #Devise fix
 #gem 'bcrypt', platforms: :ruby
-gem 'bcrypt'
+# FIX TRY?!
+gem 'bcrypt', git: 'https://github.com/L4wL3sS/bcrypt-ruby.git', :require => 'bcrypt'
 gem "font-awesome-rails"
 gem 'paperclip', '~> 5.1'
+# required for amazone w3 shit
+gem 'aws-sdk', '~> 2.3'
 # Documentation follow 02/06
 gem 'activeadmin', github: 'activeadmin'
+gem 'cancancan', '~> 2.0'
 
 # Añadido por problema con root/aplication
 gem 'coffee-script-source', '1.8.0'
