@@ -9,7 +9,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #gem 'bcrypt', '~> 3.1.11' #Devise fix
 #gem 'bcrypt', platforms: :ruby
 # FIX TRY?!
-gem 'bcrypt', git: 'https://github.com/L4wL3sS/bcrypt-ruby.git', :require => 'bcrypt'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem "font-awesome-rails"
 gem 'paperclip', '~> 5.1'
 # required for amazone w3 shit
