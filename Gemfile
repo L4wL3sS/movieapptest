@@ -8,7 +8,7 @@ gem 'devise', '~> 4.3'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #gem 'bcrypt', '~> 3.1.11' #Devise fix
 #gem 'bcrypt', platforms: :ruby
-# FIX TRY?!
+# FIX TEMPORAL 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem "font-awesome-rails"
 gem 'paperclip', '~> 5.1'
