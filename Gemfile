@@ -11,7 +11,9 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 # FIX TEMPORAL 
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem "font-awesome-rails"
-gem 'paperclip', '~> 5.1'
+#TEMP FIX
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+#gem 'paperclip', '~> 5.1'
 # required for amazone w3 shit
 gem 'aws-sdk', '~> 2.3'
 # Documentation follow 02/06
