@@ -225,6 +225,9 @@ Devise.setup do |config|
   # are using only default views.
   # config.scoped_views = false
 
+  # Modificar vistes users /before rails g devise:views users
+  config.scoped_views = true
+
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
   # config.default_scope = :user
