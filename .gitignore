@@ -25,3 +25,5 @@
 
 #(IGNORE)don't track images ref. 
 /public/system/movies/images
+# Ignore application configuration
+/config/application.yml
