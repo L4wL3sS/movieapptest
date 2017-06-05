@@ -1,3 +1,48 @@
 // Place all the styles related to the settings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container{
+	li{
+	text-decoration: none;
+	list-style-type: none;
+	margin-bottom: 5px;
+	}
+	h2{
+		color: #DC3522;
+		font-weight: bold;
+	}
+	.links{
+		color: blue;
+	}
+}
+
+.container-set{
+	background-color: #e2d8b6;
+	border: 4px solid white;
+	border-radius: 3px;
+	padding: 0 10px;
+	margin-bottom: 15px;
+	#img-user{
+		margin-bottom: 10px;
+	}	
+}
+.container-item{
+	text-align: center;
+	margin-bottom: 5%;
+	#poster-s{
+		margin-left: 11.5%;
+		margin-bottom: 5%;
+	}
+}
+.righty{
+	text-align: right;
+	margin-right: 10px;
+	color: blue;
+	font-weight: bold;
+}
+.container-rate{
+	margin-bottom: 15px;
+	th{
+		padding-left: 10px;
+	}
+}
