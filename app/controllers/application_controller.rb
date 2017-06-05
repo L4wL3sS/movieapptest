@@ -11,9 +11,8 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     #super(resource)
-    if authenticate_user {
+    if :authenticate_user! 
     	settings_path
-    }
     end    
   end
 
