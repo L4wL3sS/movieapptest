@@ -28,5 +28,16 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+      user ||= AdminUser.new # guest user (not logged in)
+ 
+      if user.email == 'mp.didac1989@gmail.com'
+        can :manage, :all
+      else
+        can :read, :movie
+      end
+      # See the wiki for details:
+    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
   end
 end

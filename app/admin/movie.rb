@@ -13,6 +13,6 @@ ActiveAdmin.register Movie do
 # end
 
 	#Dani tutorial 02/06
-	permit_params :name, :stars, :director, :year
+	permit_params :name, :description, :stars, :director, :year
 
 end

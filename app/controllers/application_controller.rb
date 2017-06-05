@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  #05/06
+  before_action :authenticate_user!
 
   # add camps to users before check 29/05
   before_filter :sanitize_devise_params, if: :devise_controller?
