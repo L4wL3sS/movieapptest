@@ -13,6 +13,8 @@ class ApplicationController < ActionController::Base
     #super(resource)
     if user_signed_in? 
     	settings_path
+    elsif admin_user_signed_in?
+    	admin_path
     end    
   end
 
