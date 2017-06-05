@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     if authenticate_user {
     	settings_path
     }
-    
+    end    
   end
 
 end
