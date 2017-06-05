@@ -19,6 +19,7 @@ gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 # FIX TEMPORAL 
 gem 'aws-sdk', '< 2.0'
 gem 'figaro'
+gem 'fog'
 # Documentation follow 02/06
 gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan', '~> 2.0'
