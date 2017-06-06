@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   # add unicness for username colum 29-05 #email already have uniqueness
-  validates_uniqueness_of :username
+  #FIX NEEDED
+  #validates_uniqueness_of :username
 
   has_one :setting
 end
