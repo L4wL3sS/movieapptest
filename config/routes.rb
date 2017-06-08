@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
+
+  resources :users do
+	resources :settings
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # You can have the root of your site routed with "root"
@@ -18,7 +22,6 @@ Rails.application.routes.draw do
 		resources :reviews
 	end
 
-	resources :settings
 	get 'settings/index'
 
 end

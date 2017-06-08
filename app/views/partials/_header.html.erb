@@ -24,10 +24,10 @@
             <% if user_signed_in? %>
               <li><%= link_to "Create Movie", new_movie_path %></li>
               <li><%= link_to "Edit Account", edit_user_registration_path %></li>
-              
+              <!-- settings simbol -->
               <%= link_to '<li id ="nav_log_out" class="fa fa-home fa-3 hidden-xs"></li>'.html_safe, settings_path %>
               <%= link_to '<li class=" visible-xs">Profile</li>'.html_safe, settings_path %>
-              <li id="nav_user"><b><%= current_user.username %></b></li>
+              <span id="nav_user"><b><%= current_user.username %></b></span>
               <!-- log_out simbol -->  
               <%= link_to '<li id ="nav_log_out" class="fa fa-sign-out fa-3 hidden-xs"></li>'.html_safe, destroy_user_session_path, method: :delete %>
               <%= link_to '<li class=" visible-xs">Log_Out</li>'.html_safe, destroy_user_session_path, method: :delete %>

@@ -27,7 +27,12 @@ $c_main_5: #1E1E20;
 body {
 	background: $c_main_2;
 }
-
+.navbar-right{
+  span{
+    margin-left: 5px;
+  }
+}
+  
 #nav_user {
 	margin-top: 15px;
 }

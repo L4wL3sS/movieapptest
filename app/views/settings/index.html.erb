@@ -12,9 +12,15 @@
 			<p><b>Profile Views Last 7 Days: </b>5</p>
 		</div>
 		<div class="container-set">
-			<h2>ABOUT</h2>
-			<p><b>Member Since</b></p>
-			<p>May 2017</p>
+			<h2>ABOUT <span><%= current_user.username %></span></h2>
+			<p><b>Member Since:</b></p>
+			<p><%= current_user.created_at %></p>
+			<p><b>Email:</b></p>
+			<p><%= current_user.email %></p>
+			<p><b>Times Log:</b></p>
+			<p><%= current_user.sign_in_count %></p>
+			<p><b>Log Since</b></p>
+			<p><%= current_user.current_sign_in_at %></p>
 		</div>
 		<li class="righty">Edit</li>
 	</div>
