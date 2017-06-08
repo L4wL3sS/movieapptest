@@ -4,14 +4,17 @@ class SettingsController < ApplicationController
 
   def index
   	#@setting = current_user.setting
+  	@setting = User.setting
   end
 
   def show
-  	@setting = current_user.setting
+  	#@setting = current_user.setting
+  	@setting = User.setting
   end	
 
   def new
-  	@setting = current_user.setting.new
+  	#@setting = current_user.setting.new
+  	@setting = User.setting.new
   end
 
   def create
