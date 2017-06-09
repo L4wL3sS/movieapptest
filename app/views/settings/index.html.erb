@@ -1,18 +1,30 @@
 <div class="row container">
 	<div class="col-xs-12 col-md-4">
-		<div class="container-set">
-			<img id="img-user" class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/bo_5px_solid_rgb:ffffff,c_scale,h_150/v1496690341/default-user_tocuja.png" alt="user-img">
-			<p><b>USER NAME</b></p>
-			<li class="links">Manage Account</li>
-			<li class="links">Profile Summary</li>
-		</div>
+		<%if !@setting.nil?%>
+			<div class="container-set">
+				<%= link_to '<li id ="edit-icon" class="nodecor pull-right fa fa-lg fa-pencil-square-o" aria-hidden="true"></li>'.html_safe, edit_setting_path(@setting.id) %>
+				<img id="img-user" class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/bo_5px_solid_rgb:ffffff,c_scale,h_150/v1496690341/default-user_tocuja.png" alt="user-img">
+				<p><b><%= current_user.username %></b></p>			 
+				<p>Country:&nbsp;<%= @setting.country %></p>
+				<p>Language:&nbsp;<%= @setting.language %></p>	 
+				<li class="links">Manage Account</li>
+				<li class="links">Profile Summary</li>	   
+			</div>
+			
+		<%else%>
+			<div class="container-set">
+				<img id="img-user" class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/bo_5px_solid_rgb:ffffff,c_scale,h_150/v1496690341/default-user_tocuja.png" alt="user-img">
+				<p><b><%= current_user.username %></b></p>			 			
+			</div>
+			<%= link_to '<li id ="edit-icon" class="fa fa-lg fa-pencil-square-o" aria-hidden="true"></li>'.html_safe, new_setting_path %>			
+		<%end%>
 		<div class="container-set">
 			<h2>PORFILE STATS</h2>
 			<p><b>Total Profile Views: </b>53</p>
 			<p><b>Profile Views Last 7 Days: </b>5</p>
 		</div>
 		<div class="container-set">
-			<h2>ABOUT <span><%= current_user.username %></span></h2>
+			<h2>ABOUT</h2>
 			<p><b>Member Since:</b></p>
 			<p><%= current_user.created_at %></p>
 			<p><b>Email:</b></p>

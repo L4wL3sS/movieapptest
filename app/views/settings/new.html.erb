@@ -1,4 +1,19 @@
-<h2>Account Management</h2>
+<h2>New Settings</h2>
+
+<%= form_for(@setting) do |f| %>
+	<div class="field">
+		<%= f.text_field :country, placeholder: "Country", class:"form-control" %>
+	</div>
+	<div class="field">
+		<%= f.text_field :language, placeholder: "Language", class:"form-control" %>
+	</div>    
+	 
+	<div class="field">
+		<%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
+	</div>
+<% end %>
+
+
 <div class="row">
 	<div class="col-xs-12">
 	  	<label for="name">Personal Information</label>

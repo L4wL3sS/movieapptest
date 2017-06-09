@@ -24,13 +24,10 @@
 	margin-bottom: 15px;
 	#img-user{
 		margin-bottom: 10px;
-	}	
-	h2{
-		span{
-			font-size: 20px;
-			color: #3D4140;
-			margin-left: 10px;
-		}
+	}
+	#edit-icon{
+		margin-top: 10px;
+		margin-right: -2px;
 	}
 }
 .container-item{
@@ -44,6 +41,7 @@
 .righty{
 	text-align: right;
 	margin-right: 10px;
+	margin-top: -10px;
 	color: blue;
 	font-weight: bold;
 }
