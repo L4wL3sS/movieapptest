@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   
+  # Order is important
   devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   devise_for :users
+  ActiveAdmin.routes(self)  
   resources :settings
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # You can have the root of your site routed with "root"
-	root 'movies#index', as: 'home'
+	
 	#root :to => "statics#index"
 	#Example of regular route:
 	#get 'about' => 'pages#about', as: 'about'
@@ -20,6 +21,6 @@ Rails.application.routes.draw do
 	end
 
 	get 'settings/index'
-
+	root 'movies#index', as: 'home'
 end
 	
