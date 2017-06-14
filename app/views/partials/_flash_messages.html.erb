@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-sm-12">
+    <% flash.each do |type, message| %>
+      <% unless message.blank? %>
+      <div id="flashmensaje" class="alert <%= bootstrap_class_for(type) %> fade in">
+        <button class="close" data-dismiss="alert">×</button>
+        <%= message.html_safe %>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+ 
+<!-- message will show only for 5 sec -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(function(){
+      $('#flashmensaje').remove();
+    }, 5000);
+  })
+</script>
