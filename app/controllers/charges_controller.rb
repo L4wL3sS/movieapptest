@@ -20,8 +20,15 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
+	  #Added for test to table fixet amount
+	  current_user.payments.create(subscription: false, channel: "stripe", active: true, plan: 5, amount: 5)
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to new_charge_path
 	end
+		
+	
+
+
 end
