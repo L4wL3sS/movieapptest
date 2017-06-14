@@ -20,4 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  setting:
+    create_success: "Succesful created!"
+    create_not_success: "Sorry NOT Succesful created!"
+    update_success: "Succesful updated!"
+    update_not_success: "Sorry NOT Succesful updated!"
+  activerecord:
+    errors:
+      models:
+        setting:
+          attributes:
+            country:
+              no_country: "Country must be present!"
+              short_country: "Need more than 2 caracters!"
+            language:
+              no_language: "Language must be present!"
+              short_language: "Need more than 2 caracters!"
+

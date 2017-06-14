@@ -19,9 +19,12 @@ class SettingsController < ApplicationController
 	  @setting = current_user.build_setting(setting_params)
 	 
 	  if @setting.save
+	  		flash[:success] = t('setting.create_success')
 			redirect_to settings_path
 	  else
+	  		flash[:danger] = t('setting.create_not_success')
 			render :new
+
 	  end
   end
 
@@ -32,10 +35,12 @@ class SettingsController < ApplicationController
 	def update
 		@setting = Setting.find(params[:id])
 		if @setting.update_attributes(setting_params)
-   		redirect_to settings_path
-	  else
-			render :index
-	  end
+			flash[:success] = t('setting.create_success')
+   			redirect_to settings_path
+		else
+			#flash[:danger] = t('setting.create_not_success')
+			render :edit
+		end
 	end
 
   def setting_params
