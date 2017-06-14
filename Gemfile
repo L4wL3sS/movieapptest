@@ -24,6 +24,9 @@ gem 'fog'
 gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan', '~> 2.0'
 
+#Stripties
+gem 'stripe'
+
 # Añadido por problema con root/aplication
 gem 'coffee-script-source', '1.8.0'
 
