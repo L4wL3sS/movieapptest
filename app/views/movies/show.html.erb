@@ -2,7 +2,10 @@
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-4">
-				<%= image_tag @movie.image.url(:medium) %>
+
+				<!-- Mostrar heroku desde externo temp.<<<< -->
+				<%= image_tag @movie.url %>
+
 				<div class="table-responsive">
 					<table class="table">
 						<tbody>
