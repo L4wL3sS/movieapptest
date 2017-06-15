@@ -8,6 +8,12 @@
 	</div>
 <%end%>
 
+<% if @setting.errors.any? %>
+	<% @setting.errors.full_messages.each do |msg| %>
+		<div class="alert alert-danger"><%= msg %></div>
+	<% end %>
+<% end %>
+
 <%= form_for(@setting) do |f| %>
 	<div class="field">
 		<%= f.text_field :country, placeholder: "Country", class:"form-control" %>
@@ -20,7 +26,6 @@
 		<%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
 	</div>
 <% end %>
-
 
 <div class="row">
 	<div class="col-xs-12">

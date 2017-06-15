@@ -21,14 +21,26 @@ class ChargesController < ApplicationController
 	  )
 
 	  #Added for test to table fixet amount
-	  current_user.payments.create(subscription: false, channel: "stripe", active: true, plan: 5, amount: 5)
+	  #current_user.payments.create(subscription: false, channel: "stripe", active: true, plan: 5, amount: 5)
+
+	  #Added to show 
+	  @payment = Payment.new
+		@payment.user_id = current_user.id
+		@payment.channel = "Stripe"
+		@payment.active = true
+		@payment.subscription = false
+		@payment.plan = 5
+		@payment.amount = 5
+		@payment.save
+
+	#Daria algun error con rescue? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	flash[:success] = t('payment.create_success')
+  redirect_to settings_path
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to new_charge_path
 	end
-		
 	
-
-
+	 
 end

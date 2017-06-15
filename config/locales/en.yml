@@ -20,20 +20,22 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  payment:
+    create_success: "Thanks for your donation!"
   setting:
     create_success: "Succesful created!"
-    create_not_success: "Sorry NOT Succesful created!"
+    create_not_success: "Sorry, NOT Succesful created!"
     update_success: "Succesful updated!"
-    update_not_success: "Sorry NOT Succesful updated!"
+    update_not_success: "Sorry, NOT Succesful updated!"
   activerecord:
     errors:
       models:
         setting:
           attributes:
             country:
-              no_country: "Country must be present!"
-              short_country: "Need more than 2 caracters!"
+              no_country: ": Must be present!"
+              short_country: ": Needs 2 or more characters!"
             language:
-              no_language: "Language must be present!"
-              short_language: "Need more than 2 caracters!"
+              no_language: ": Must be present!"
+              short_language: ": Needs 2 or more characters!"
 

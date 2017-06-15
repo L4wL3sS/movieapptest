@@ -2,9 +2,17 @@ class SettingsController < ApplicationController
 	before_action :authenticate_user!
 	layout "admin"
 
-  def index
-  	@setting = current_user.setting
-  end
+	def index
+	    @setting = current_user.setting
+	    
+	    @payment = current_user.payments
+	    
+	    #didn't worck for me T_T?
+	    # @payment = []
+	    # if current_user.payments.exists?
+	    #   @payment = Payments.find_by(user_id: current_user.id)	      
+	    # end 
+	end
 
   def show
   	@setting = setting.find(params[:id])
@@ -22,7 +30,7 @@ class SettingsController < ApplicationController
 	  		flash[:success] = t('setting.create_success')
 			redirect_to settings_path
 	  else
-	  		flash[:danger] = t('setting.create_not_success')
+	  		#flash[:danger] = t('setting.create_not_success')	#devise errors will do fine
 			render :new
 
 	  end
@@ -38,7 +46,7 @@ class SettingsController < ApplicationController
 			flash[:success] = t('setting.create_success')
    			redirect_to settings_path
 		else
-			#flash[:danger] = t('setting.create_not_success')
+			#flash[:danger] = t('setting.create_not_success')  #devise errors will do fine
 			render :edit
 		end
 	end
