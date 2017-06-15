@@ -1,0 +1,19 @@
+es:
+  payment:
+    create_success: "Gracias por su donación!"
+  setting:
+    create_success: "Creado satisfactoriamente!"
+    create_not_success: "No se ha creado correctamente!"
+    update_success: "Actualizado satisfactoriamente!"
+    update_not_success: "No se ha actualizado correctamente!"
+  activerecord:
+    errors:
+      models:
+        setting:
+          attributes:
+            country:
+              no_country: ": Debe estar presente!"
+              short_country: ": Tiene que tener 2 o más caracteres!"
+            language:
+              no_language: ": Debe estar presente!"
+              short_language: ": Tiene que tener 2 o más caracteres!"

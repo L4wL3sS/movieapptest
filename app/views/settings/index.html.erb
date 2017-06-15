@@ -1,11 +1,20 @@
 <div class="row container">
 	<div class="jumbotron" >
 		<h2>Your Favorite Movies on MoviesTag </h2>
-		<p>Wanna make this page great? Give us a TIP!</p>
+		<p>Wanna make this page give us some Tip!</p>
 		<p><%= link_to "Donate", new_charge_path, class: "btn btn-primary" %></p>
 	</div>
+
+	<%if flash.present? %>
+		<div class="row">
+		    <div class="col-sm-12 col-md-6 col-md-offset-3" style="padding:25px 0">
+		        <%= render partial: "shared/flash_messages", flash: flash %>
+		    </div>
+		</div>
+	<%end%>
+	
 	<div class="col-xs-12 col-md-4">
-		<%if !@setting.nil?%>
+		<%if !@setting.nil? %>
 			<div class="container-set">
 				<%= link_to '<li id ="edit-icon" class="nodecor pull-right fa fa-lg fa-pencil-square-o" aria-hidden="true"></li>'.html_safe, edit_setting_path(@setting.id) %>
 				<img id="img-user" class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/bo_5px_solid_rgb:ffffff,c_scale,h_150/v1496690341/default-user_tocuja.png" alt="user-img">
@@ -41,7 +50,29 @@
 			<p><%= current_user.current_sign_in_at %></p>
 		</div>
 		<li class="righty">Edit</li>
+		<div class="container-set">
+			
+			<!-- Added payment -->
+			<% if !@payment.nil? %>
+				<h2>Payments</h2>
+				<%@payment.each do |payment|%>
+					<p><b>Subscription active:</b></p>
+					<p><%= payment.subscription %></p>
+					<p><b>Payment Channel:</b></p>
+					<p><%= payment.channel %></p>
+					<p><b>Payment active:</b></p>
+					<p><%= payment.active %></p>
+					<p><b>Plan:</b></p>
+					<p><%= payment.plan %></p> 
+					<p><b>Amount payed:</b></p>
+					<p><%= payment.amount %></p>
+					<hr>				
+				<%end%>
+			<%end%>
+
+		</div>
 	</div>
+			
 	<div class="col-xs-12 col-md-8">
 		<div class="container-set">
 			<h2>WANT-TO-SEE MOVIES</h2>

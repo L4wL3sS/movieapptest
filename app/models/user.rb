@@ -7,7 +7,7 @@ class User < ApplicationRecord
   # add unicness for username colum 29-05 #email already have uniqueness
 
   validates_uniqueness_of :username
-
-  has_one :setting
   has_many :payments
+  has_one :setting
+  
 end
