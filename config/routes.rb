@@ -15,13 +15,16 @@ Rails.application.routes.draw do
 	#get 'about' => 'pages#about', as: 'about'
 	#get '/about' => 'statics#about', :as => :about
 	get 'about' => 'about#index', as: 'about'
+	get 'settings/index'
 	#Example resource route
 	resources :movies do
 		resources :comments
 		resources :reviews
 	end
 
-	get 'settings/index'
+	
 	root 'movies#index', as: 'home'
+	#added for method root_path (search)
+	root :to => "movies#index"
 end
 	

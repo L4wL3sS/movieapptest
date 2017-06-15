@@ -12,6 +12,7 @@ class SettingsController < ApplicationController
 	    # if current_user.payments.exists?
 	    #   @payment = Payments.find_by(user_id: current_user.id)	      
 	    # end 
+
 	end
 
   def show

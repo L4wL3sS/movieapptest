@@ -1,0 +1,80 @@
+<hr>
+<div class="row">
+	<div class="col-md-6">  
+		<table class="table">
+	  	<h2>Lastest Movies</h2>                                                                   
+		  <div class="table-responsive"> 
+		    <thead>
+		    	<% @movies.limit(5).order('year desc').each do |movie| %>
+		      <tr>		      	
+		      	<th>
+			      	<% if movie.stars < 5 %>
+			      		<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319628/inset_coin_kyvs7l.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 6 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/bornce_coin_vthk3p.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 8 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/silver_coin_oq6chf.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 10 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/gold_coin_md3n8f.png" alt="insert_coin">
+							<% end %>
+		      	</th>
+		        <th><%= movie.name%></th>
+		        <th>Year: <%= movie.year%></th>        
+		        <th><%= link_to "Read More", movie_path(movie)%></th>
+		      </tr>
+		      <% end %>
+		    </thead>
+		</table><!-- END table -->
+		<br>
+		<table class="table">
+	  	<h2>TOP 5 Worst Movies All Times</h2>                                                           
+		  <div class="table-responsive"> 
+		    <thead>
+		    	<% @movies.limit(5).order('stars asc').each do |movie| %>
+		      <tr>		      	
+		      	<th>
+			      	<% if movie.stars < 5 %>
+			      		<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319628/inset_coin_kyvs7l.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 6 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/bornce_coin_vthk3p.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 8 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/silver_coin_oq6chf.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 10 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/gold_coin_md3n8f.png" alt="insert_coin">
+							<% end %>
+		      	</th>
+		        <th><%= movie.name%></th>
+		        <th>Year: <%= movie.year%></th>        
+		        <th><%= link_to "Read More", movie_path(movie)%></th>
+		      </tr>
+		      <% end %>
+		    </thead>
+		</table><!-- END table -->
+	</div><!-- END col izq-->
+	<div class="col-md-6">  
+		<table class="table">
+	  	<h2>TOP Best 12 Movies All Times</h2>                                                           
+		  <div class="table-responsive"> 
+		    <thead>
+		    	<% @movies.limit(12).order('stars desc').each do |movie| %>
+		      <tr>		      	
+		      	<th>
+			      	<% if movie.stars < 5 %>
+			      		<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319628/inset_coin_kyvs7l.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 6 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/bornce_coin_vthk3p.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 8 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/silver_coin_oq6chf.png" alt="insert_coin">
+			      	<% elsif movie.stars <= 10 %>
+								<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,h_25/v1496319629/gold_coin_md3n8f.png" alt="insert_coin">
+							<% end %>
+		      	</th>
+		        <th><%= movie.name%></th>
+		        <th>Year: <%= movie.year%></th>        
+		        <th><%= link_to "Read More", movie_path(movie)%></th>
+		      </tr>
+		      <% end %>
+		    </thead>
+		</table><!-- END table -->
+	</div><!-- END col der-->
+</div><!-- END row -->

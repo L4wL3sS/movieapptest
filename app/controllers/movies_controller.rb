@@ -5,6 +5,14 @@ class MoviesController < ApplicationController
 
 	def index
 		@movies = Movie.all
+ 
+		if params[:search]
+			@movies = Movie.search(params[:search]).order("created_at DESC")
+		elsif params[:search_year]
+			@movies = Movie.search_year(params[:search_year]).order("created_at DESC")
+		elsif params[:search_genre]
+			@movies = Movie.search_genre(params[:search_genre]).order("created_at DESC")
+		end
 	end
 
 	def show
@@ -49,6 +57,6 @@ class MoviesController < ApplicationController
 	private 
 
 	def movie_params
-		params.require(:movie).permit(:name, :description, :stars, :director, :year, :image, :url)
+		params.require(:movie).permit(:name, :description, :stars, :director, :year, :image, :genre, :url)
 	end
 end
