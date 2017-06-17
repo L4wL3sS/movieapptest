@@ -1,16 +1,29 @@
-<%= form_tag(root_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
-    <%= submit_tag t('search.submit') %>
-<% end %>
-<%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
-    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director" %>
-    <%= submit_tag t('search.submit') %>
-<% end %>
-<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
-	<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year" %>
-	<%= submit_tag t('search.submit') %>
-<% end %>
-<%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
-	<%= select_tag :search_genre, ("<option>--Genre--</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, :onchange => "this.form.submit()"%>
-<% end %>
-<br>
+<style type="text/css">
+	.container-search{
+		margin: 0 auto;
+    	width: 80%;
+	}
+</style>
+<div class="container-search">
+	<table>
+		<tbody>
+			<tr>
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+			    <%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
+			    <%= submit_tag t('search.submit') %>
+			<% end %>
+			<%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
+			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director" %>
+			    <%= submit_tag t('search.submit') %>
+			<% end %>
+			<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
+				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year" %>
+				<%= submit_tag t('search.submit') %>
+			<% end %>
+			<%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
+				<%= select_tag :search_genre, ("<option>--Genre--</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, :onchange => "this.form.submit()"%>
+			<% end %>
+			</tr>
+		</tbody>
+	</table>
+</div><br>
