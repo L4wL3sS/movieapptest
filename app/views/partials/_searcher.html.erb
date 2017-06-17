@@ -2,28 +2,37 @@
 	.container-search{
 		margin: 0 auto;
     	width: 80%;
-	}
-</style>
-<div class="container-search">
-	<table>
-		<tbody>
-			<tr>
+    	border: 5px, solid, black;
+  }
+  #genre{
+  	margin-top: 2px;
+  }
+	</style>
+	<div class="container text-center">
+		<div class="form-inline">
 			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
-			    <%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
-			    <%= submit_tag t('search.submit') %>
+	    		<%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: '	form-control' %>
+	    		<%= submit_tag t('search.submit'), class: 'btn btn-default' %>
 			<% end %>
+		</div>	
+		<div class="form-inline">
 			<%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
-			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director" %>
-			    <%= submit_tag t('search.submit') %>
+			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control' %>
+			    <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
 			<% end %>
+		</div>	
+		<div class="form-inline">		
 			<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
-				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year" %>
-				<%= submit_tag t('search.submit') %>
+				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control' %>
+				<%= submit_tag t('search.submit'), class: 'btn btn-default' %>
 			<% end %>
+		</div>
+		<div class="form-inline" id="genre">
 			<%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
-				<%= select_tag :search_genre, ("<option>--Genre--</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, :onchange => "this.form.submit()"%>
+				<%= select_tag :search_genre, ("<option> --Genre--</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
 			<% end %>
-			</tr>
-		</tbody>
-	</table>
-</div><br>
+		</div>		
+	</div>
+
+<br>
+
