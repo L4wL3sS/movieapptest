@@ -34,8 +34,20 @@
 <br>
 
 
-<%= render 'partials/trailers' %>
+<!-- mostar todas las pelis -->
+<hr>
+<div class="row">
+  <%@movies.each do |movie|%>
+	  <div class="col-sm-6 col-md-4 col-lg-3">
+	      <div class="latest-movie">
+	          <a href="<%= movie_path(movie) %>"><img src="<%=movie.url%>"></a>
+	          <p><b>Nombre:</b> <%=movie.name%></p>
+	          <p><b>Director:</b> <%=movie.director%></p>
+	          <p><b>Año:</b> <%=movie.year%></p>
+	          <p><b>Genre:</b> <%=movie.genre%></p>
+	      </div>
+	  </div>
+  <%end%>
+</div>
 
-<%= render 'partials/top_movies' %>
 <br>
-

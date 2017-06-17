@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 	#get '/about' => 'statics#about', :as => :about
 	get 'about' => 'about#index', as: 'about'
 	get 'settings/index'
+	get 'movies/index_search' => 'movies#index_search'
 	#Example resource route
 	resources :movies do
 		resources :comments

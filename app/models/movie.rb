@@ -17,6 +17,11 @@ class Movie < ApplicationRecord
 
 	def self.search(search)
   	#where("actor like ?", "%" + "%#{search}%" + "%")
+  	where("name like ?", "%" + "%#{search}%" + "%")
+	end
+
+	def self.search_director(search)
+  	#where("actor like ?", "%" + "%#{search}%" + "%")
   	where("director like ?", "%" + "%#{search}%" + "%")
 	end
 
