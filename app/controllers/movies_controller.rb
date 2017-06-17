@@ -5,22 +5,25 @@ class MoviesController < ApplicationController
 
 	def index
 		@movies = Movie.all
- 
+
+ 		
 		if params[:search]
-			#redirect_to movies_index_search_path
 			@movies = Movie.search(params[:search]).order("created_at DESC")
 			@@my_value=@movies
-			redirect_to movies_index_search_path
+			redirect_to movies_index_search_path			
+			
 		elsif params[:search_director]
 			#redirect_to movies_index_search_path
 			@movies = Movie.search_director(params[:search_director]).order("created_at DESC")
-			redirect_to movies_index_search_path
 			@@my_value=@movies
+			redirect_to movies_index_search_path
+			
 		elsif params[:search_year]
 			#redirect_to movies_index_search_path
 			@movies = Movie.search_year(params[:search_year]).order("created_at DESC")
-			redirect_to movies_index_search_path
 			@@my_value=@movies
+			redirect_to movies_index_search_path
+			
 		elsif params[:search_genre]
 			#redirect_to movies_index_search_path
 			@movies = Movie.search_genre(params[:search_genre]).order("created_at DESC")
@@ -30,7 +33,7 @@ class MoviesController < ApplicationController
 	end
 
 	def index_search
-		@movies = @@my_value
+		@movies_s = @@my_value
  
 		if params[:search]
 			@movies_s = Movie.search(params[:search]).order("created_at DESC")
