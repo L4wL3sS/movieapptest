@@ -1,0 +1,38 @@
+<style>
+	h2{
+		color: #DC3522;
+		font-weight: bold;
+		text-align: center;
+	}
+	.jumbotron{
+		text-align: center !important;
+	}
+</style>
+<% if !user_signed_in? %>
+	<div class="jumbotron" >
+		<h2>Your Favorite Movies on MoviesL4wL3sS </h2>
+		<p>Wanna make this page great? sing up and post your comments! We care about your opinon.</p>
+		<p><%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary" %></p>
+	</div>
+<% end %>
+
+<%= render 'partials/searcher' %>
+
+
+<!-- mostar todas las pelis -->
+<hr>
+<div class="row">
+  <%@movies.each do |movie|%>
+	  <div class="col-sm-6 col-md-4 col-lg-3">
+	      <div class="show-movies">
+	          <a href="<%= movie_path(movie) %>"><img class="img-responsive" src="<%=movie.url%>"></a>
+	          <p><b>Nombre:</b> <%=movie.name%></p>
+	          <p><b>Director:</b> <%=movie.director%></p>
+	          <p><b>Año:</b> <%=movie.year%></p>
+	          <p><b>Genre:</b> <%=movie.genre%></p>
+	      </div>
+	  </div>
+  <%end%>
+</div>
+
+<br>
