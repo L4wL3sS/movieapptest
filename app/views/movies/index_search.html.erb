@@ -16,22 +16,7 @@
 	</div>
 <% end %>
 
-<%= form_tag(root_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Movies" %>
-    <%= submit_tag t('search.submit') %>
-<% end %>
-<%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
-    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director" %>
-    <%= submit_tag t('search.submit') %>
-<% end %>
-<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
-	<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year" %>
-	<%= submit_tag t('search.submit') %>
-<% end %>
-<%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
-	<%= select_tag :search_genre, ("<option>--Genre--</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, :onchange => "this.form.submit()"%>
-<% end %>
-<br>
+<%= render 'partials/searcher' %>
 
 
 <!-- mostar todas las pelis -->
@@ -39,8 +24,8 @@
 <div class="row">
   <%@movies.each do |movie|%>
 	  <div class="col-sm-6 col-md-4 col-lg-3">
-	      <div class="latest-movie">
-	          <a href="<%= movie_path(movie) %>"><img src="<%=movie.url%>"></a>
+	      <div class="show-movies">
+	          <a href="<%= movie_path(movie) %>"><img class="img-responsive" src="<%=movie.url%>"></a>
 	          <p><b>Nombre:</b> <%=movie.name%></p>
 	          <p><b>Director:</b> <%=movie.director%></p>
 	          <p><b>Año:</b> <%=movie.year%></p>
