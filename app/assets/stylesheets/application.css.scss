@@ -101,3 +101,23 @@ body {
   margin-left: 20px;
  }
 
+ //searcher
+  #div-sercher{
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #75A39E;
+    max-width: 1015px;
+  }
+  #genre{
+    margin-top: 7px;
+    margin-left: 5px;
+  }
+  #search-form{
+    margin: 5px;
+  }
+  .form-inline{
+    .btn, .btn-sm{
+      background-color: #dce4f2;
+    }
+  }

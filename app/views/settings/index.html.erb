@@ -22,7 +22,8 @@
 				<p>Country:&nbsp;<%= @setting.country %></p>
 				<p>Language:&nbsp;<%= @setting.language %></p>	 
 				<li class="links">Manage Account</li>
-				<li class="links">Profile Summary</li>	   
+				<li class="links">Profile Summary</li>
+				<li><%= link_to 'SelectMovies', select_movies_path(@setting.id) %></li>  
 			</div>
 			
 		<%else%>			
