@@ -1,38 +1,109 @@
-<style type="text/css">
-	.container-search{
-		margin: 0 auto;
-    	width: 80%;
-    	border: 5px, solid, black;
-  }
-  #genre{
-  	margin-top: 2px;
-  }
-	</style>
-	<div class="container text-center">
-		<div class="form-inline">
+<% if params[:controller] == "select_movies"%>
+	<div class="container text-center hidden-xs hidden-sm" id="div-sercher">
+		<div class="form-inline pull-left">
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+	    		<%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: '	form-control' %>
+	    		<%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+			<% end %>
+		</div>	
+		<div class="form-inline pull-left">
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control' %>
+			    <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+			<% end %>
+		</div>	
+		<div class="form-inline pull-left">		
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control' %>
+				<%= submit_tag t('search.submit'), class: 'btn btn-default' %>
+			<% end %>
+		</div>
+		<div class="form-inline pull-left">
+			<%= form_tag(select_movies_path, :method => "get", id: "genre") do %>
+				<%= select_tag :search_genre, ("<option> Select Genre</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
+			<% end %>
+		</div>		
+	</div>
+	<div class="container text-center visible-xs visible-sm" id="div-sercher">
+		<div class="form-inline ">
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+	    		<%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: '	form-control-sm' %>
+	    		<%= submit_tag t('search.submit'), class: 'btn-sm btn-default' %>
+			<% end %>
+		</div>	
+		<div class="form-inline ">
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control-sm' %>
+			    <%= submit_tag t('search.submit'), class: 'btn-sm btn-default' %>
+			<% end %>
+		</div>	
+		<div class="form-inline ">		
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control-sm' %>
+				<%= submit_tag t('search.submit'), class: 'btn-sm btn-defaultl' %>
+			<% end %>
+		</div>
+		<div class="form-inline" id="genre">
+			<%= form_tag(select_movies_path, :method => "get", id: "search-form") do %>
+				<%= select_tag :search_genre, ("<option> Select Genre</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn-sm btn-default', :onchange => "this.form.submit()"%>
+			<% end %>
+		</div>		
+	</div>
+<% else %>
+	<div class="container text-center hidden-xs hidden-sm" id="div-sercher">
+		<div class="form-inline pull-left">
 			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
 	    		<%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: '	form-control' %>
 	    		<%= submit_tag t('search.submit'), class: 'btn btn-default' %>
 			<% end %>
 		</div>	
-		<div class="form-inline">
-			<%= form_tag(root_path, :method => "get", id: "search-director-form") do %>
+		<div class="form-inline pull-left">
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
 			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control' %>
 			    <%= submit_tag t('search.submit'), class: 'btn btn-default' %>
 			<% end %>
 		</div>	
-		<div class="form-inline">		
-			<%= form_tag(root_path, :method => "get", id: "search-year-form") do %>
+		<div class="form-inline pull-left">		
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
 				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control' %>
 				<%= submit_tag t('search.submit'), class: 'btn btn-default' %>
 			<% end %>
 		</div>
-		<div class="form-inline" id="genre">
-			<%= form_tag(root_path, :method => "get", id: "search-genre-form") do %>
-				<%= select_tag :search_genre, ("<option> --Genre--</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
+		<div class="form-inline pull-left">
+			<%= form_tag(root_path, :method => "get", id: "genre") do %>
+				<%= select_tag :search_genre, ("<option> Select Genre</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn btn-default', :onchange => "this.form.submit()"%>
 			<% end %>
 		</div>		
 	</div>
+	<div class="container text-center visible-xs visible-sm" id="div-sercher">
+		<div class="form-inline ">
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+	    		<%= text_field_tag :search, params[:search], placeholder: "Search Movies", class: '	form-control-sm' %>
+	    		<%= submit_tag t('search.submit'), class: 'btn-sm btn-default' %>
+			<% end %>
+		</div>	
+		<div class="form-inline ">
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+			    <%= text_field_tag :search_director, params[:search_director], placeholder: "Search Director", class: 'form-control-sm' %>
+			    <%= submit_tag t('search.submit'), class: 'btn-sm btn-default' %>
+			<% end %>
+		</div>	
+		<div class="form-inline ">		
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+				<%= text_field_tag :search_year, params[:search_year], placeholder: "Search Year", class: 'form-control-sm' %>
+				<%= submit_tag t('search.submit'), class: 'btn-sm btn-defaultl' %>
+			<% end %>
+		</div>
+		<div class="form-inline" id="genre">
+			<%= form_tag(root_path, :method => "get", id: "search-form") do %>
+				<%= select_tag :search_genre, ("<option> Select Genre</option><br><option>ACTION</option><option>ADVENTURE</option><option>COMEDY</option><option>CRIME</option><option>DRAMA</option><option>HISTORICAL</option><option>HORROR</option><option>MUSICALS</option><option>SIENCE-FICTION</option><option>WAR</option><option>WESTERNS</option>").html_safe, class: 'btn-sm btn-default', :onchange => "this.form.submit()"%>
+			<% end %>
+		</div>		
+	</div>
+<% end %>
+
+
+
 
 <br>
 

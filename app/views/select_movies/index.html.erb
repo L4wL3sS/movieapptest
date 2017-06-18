@@ -8,9 +8,6 @@
 		text-align: center !important;
 	}
 </style>
-
-<%= render 'partials/searcher' %>
-
 <% if !user_signed_in? %>
 	<div class="jumbotron" >
 		<h2>Your Favorite Movies on MoviesL4wL3sS </h2>
@@ -19,12 +16,14 @@
 	</div>
 <% end %>
 
+<%= render 'partials/searcher' %>
+
 
 
 <!-- mostar todas las pelis -->
 <hr>
 <div class="row">
-  <%@movies_s.each do |movie|%>
+  <%@movies.each do |movie|%>
 	  <div class="col-sm-6 col-md-4 col-lg-3">
 	      <div class="show-movies">
 	          <a href="<%= movie_path(movie) %>"><img class="img-responsive" src="<%=movie.url%>"></a>

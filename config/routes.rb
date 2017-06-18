@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'select_movies/index'
+
   # Order is important
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users
   ActiveAdmin.routes(self)  
-  resources :settings
-  resources :charges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # You can have the root of your site routed with "root"
@@ -22,7 +22,10 @@ Rails.application.routes.draw do
 		resources :comments
 		resources :reviews
 	end
-
+	
+  resources :settings
+  resources :charges
+	resources :select_movies, only: :index
 	
 	root 'movies#index', as: 'home'
 	#added for method root_path (search)
