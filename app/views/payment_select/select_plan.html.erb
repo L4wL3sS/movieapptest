@@ -1,24 +1,24 @@
-<h1>PaymentSelect#select_plan</h1>
-<p>Find me in app/views/payment_select/select_plan.html.erb</p>
-</p>
+<h2 class="text-center">Payment Plan Select</h2>
+<br>
 
-<%= link_to new_charge_path(@movie_id.id, tab: "onboarding") do %>
 	<div class="row">
+	<%= link_to new_charge_path(amount: @movie_id.price) do %>
 		<div class="col-md-6">
 			<div class="container-fluid text-center" id="paymet-cont">
 				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/v1497898486/pop_qsvd5j.png" alt="buy-movie">
-				<h3> Buy <%= @movie_id.name %> for: <%= @movie_id.price %></h3>
+				<h2> Buy <%= @movie_id.name %> for: <%= @movie_id.price %></h2>
 			</div>
-		</div>			
+		</div>		
+	<% end %>	
+	<%= link_to select_monthly_subscription_path(@movie_id) do %>
 		<div class="col-md-6">
 			<div class="container-fluid text-center" id="paymet-cont">
-				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/v1497904785/sub_bya37x.jpg" alt="sub-img">
+				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_250/v1497904785/sub_bya37x.jpg" alt="sub-img">
 				<h2> SUBSCRIBE NOW</h2>
 			</div>
 		</div>	
-	</div>
-
-<% end %>
+	<% end %>	
+	</div>	
 
 <!-- 
 <%= debug params %>
