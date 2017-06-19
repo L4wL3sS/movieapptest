@@ -15,6 +15,22 @@ module ApplicationHelper
 	    end
   	end
 
+  	def options_for_genre
+
+  		types = {'ACTION'=>'ACTION',
+  		'ADVENTURE'=>'ADVENTURE',
+  		'COMEDY'=>'COMEDY',
+  		'CRIME'=>'CRIME',
+  		'DRAMA'=>'DRAMA',
+  		'HISTORICAL'=>'HISTORICAL',
+  		'HORROR'=>'HORROR',
+  		'MUSICALS'=>'MUSICALS',
+  		'SIENCE-FICTION'=>'SIENCE-FICTION',
+  		'WAR'=>'WAR',
+  		'WESTERNS'=>'WESTERNS'}
+
+  	end
+
   	def options_for_country  	
 
 	  	names = {'Afganistan'=>'Afganistan',
