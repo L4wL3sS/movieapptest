@@ -2,11 +2,18 @@ class ChargesController < ApplicationController
 	before_action :authenticate_user!
 	
 	def new
+		@amount = 500
+	  if params[:amount]
+	  	@amount = params[:amount]
+	  end
 	end
 
 	def create
 	# Amount in cents 500cents = 5$
 	  @amount = 500
+	  if params[:amount]
+	  	@amount = params[:amount]
+	  end
 
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
@@ -17,9 +24,8 @@ class ChargesController < ApplicationController
 	    :customer    => customer.id,
 	    :amount      => @amount,
 	    :description => 'Rails Stripe customer',
-	    :currency    => 'usd'
+	    :currency    => 'eur'
 	  )
-
 	  #Added for test to table fixet amount
 	  #current_user.payments.create(subscription: false, channel: "stripe", active: true, plan: 5, amount: 5)
 
@@ -29,13 +35,13 @@ class ChargesController < ApplicationController
 		@payment.channel = "Stripe"
 		@payment.active = true
 		@payment.subscription = false
-		@payment.plan = 5
-		@payment.amount = 5
+		@payment.plan = @amount
+		@payment.amount = @amount
 		@payment.save
 
 	#Daria algun error con rescue? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 	flash[:success] = t('payment.create_success')
-  redirect_to settings_path
+  	redirect_to settings_path
 
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
