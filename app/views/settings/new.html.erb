@@ -23,13 +23,14 @@
 
  -->
 <%= form_for(@setting) do |f| %>
+	<%= f.label :country %> 
+	<div class="field">         	 
+    	<%= f.select :country, options_for_country, {}, {:prompt => 'Select One Country',  autofocus: 'true', class: 'form-control'}  %>
+	</div>  
 	<div class="field">
-		<%= f.text_field :country, placeholder: "Country", class:"form-control" %>
-	</div>
-	<div class="field">
-		<%= f.text_field :language, placeholder: "Language", class:"form-control" %>
-	</div>    
-	 
+		<%= f.label :language %>        	 
+    	<%= f.select :language, options_for_language, {}, {:prompt => 'Select One Country',  autofocus: 'true', class: 'form-control'}  %>
+	</div> 
 	<div class="field">
 		<%= f.submit "Guardar", class:"btn btn-sm btn-danger white pull-right", style:"margin-top: 15px;" %>
 	</div>

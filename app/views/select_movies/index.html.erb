@@ -31,6 +31,7 @@
 	          <p><b>Director:</b> <%=movie.director%></p>
 	          <p><b>Year:</b> <%=movie.year%></p>
 	          <p><b>Genre:</b> <%=movie.genre%></p>
+	          <p><%= link_to "Buy", new_charge_path, class: "btn btn-default" %></p>
 	      </div>
 	  </div>
   <%end%>
