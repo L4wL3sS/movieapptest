@@ -25,6 +25,16 @@ $c_main_3: #374140;
 $c_main_4: #2A2C2B;
 $c_main_5: #1E1E20;
 
+#buy-movie{
+  background-color: #2A2C2B;
+  border-color: #F47920;
+  color: #fff;
+  img{
+    margin-bottom: -1px;
+    margin-right: 3px;
+  }
+}
+
 body {
 	background: $c_main_2;
 }
@@ -120,4 +130,8 @@ body {
     .btn, .btn-sm{
       background-color: #dce4f2;
     }
+  }
+
+  .fa-money{
+    background-color: #216C2A !important;
   }

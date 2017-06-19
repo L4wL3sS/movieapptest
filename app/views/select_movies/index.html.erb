@@ -18,23 +18,30 @@
 
 <%= render 'partials/searcher' %>
 
-
-
 <!-- mostar todas las pelis -->
 <hr>
 <div class="row">
   <%@movies.each do |movie|%>
 	  <div class="col-sm-6 col-md-4 col-lg-3 ">
-	      <div class="show-movies">
+	      <div class="show-movies text-center">
 	          <a href="<%= movie_path(movie) %>"><img class="img-responsive" src="<%=movie.url%>"></a>
 	          <p><b>Title:</b> <%=movie.name%></p>
 	          <p><b>Director:</b> <%=movie.director%></p>
 	          <p><b>Year:</b> <%=movie.year%></p>
 	          <p><b>Genre:</b> <%=movie.genre%></p>
-	          <p><%= link_to "Buy", new_charge_path, class: "btn btn-default" %></p>
+	          <p>
+	          <%= link_to select_plan_path(movie: movie.id), class: "btn btn-lg btn-default", id: "buy-movie" do %>
+	          	<!-- <i class="fa fa-lg fa-money" aria-hidden="true"></i> -->
+	          	<!-- <img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497868131/tiket_ty2eow.png" alt="tiket"> -->
+	          	<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497898486/pop_qsvd5j.png" alt="buy-movie">
+	          	<b> <%= movie.price %></b>
+	          <% end %>	
+	          </p>
 	      </div>
 	  </div>
   <%end%>
 </div>
 
 <br>
+
+<%= debug params %>
