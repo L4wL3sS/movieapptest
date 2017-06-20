@@ -84,7 +84,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # Dani devise tutorial
+  # Dani devise tutorial + sidekiq
   config.action_mailer.default_url_options = { :host => ENV["DOMAIN"] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -94,12 +94,21 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: 587,
-    domain: ENV["DOMAIN"],
+    #domain: ENV["DOMAIN"],
+    domain: ENV["GMAIL_DOMAIN"],
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: ENV["MAILER_USERNAME"],
     password: ENV["MAILER_PASSWORD"]
   }
+
+  config.middleware.use ExceptionNotification::Rack,
+                        :email => {
+                          :email_prefix => "[Error app]",
+                          :sender_address => %{"notifier" <algo@algo.com>},
+                          :exception_recipients => %w{algo@algo.com}
+                        }
+  end
 
   # AWS variables paperclip/amazon S3
   # config.paperclip_defaults = {
@@ -120,4 +129,6 @@ Rails.application.configure do
         s3_region: ENV['AWS_REGION'],
       }
     }
+
+
 end

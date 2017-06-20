@@ -1,4 +1,9 @@
 es:
+  mailer:
+    onboarding_mailer: "Bienvenido a L4wL3sSMovies!"
+    onboarding_mailer_second_mailer: "Gracias por estar con nosostros!"
+    onboarding_mailer_third_mailer: "Sal a la calle!"
+    subject_title_hml: "L4wL3sSMovies"
   payment:
     create_success: "Gracias por su donación!"
   setting:

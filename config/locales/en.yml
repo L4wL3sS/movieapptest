@@ -20,6 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  mailer:
+    onboarding_mailer: "Welcome to L4wL3sSMovies!"
+    mailer.onboarding_mailer_second_mailer: "Thanks for stay with us!"
+    mailer.onboarding_mailer_third_mailer: "Get some live!"
+    subject_title_hml: "L4wL3sSMovies"
   search:
     submit: "Search"
   payment:
