@@ -33,8 +33,12 @@
 	          <%= link_to select_plan_path(movie: movie.id), class: "btn btn-lg btn-default", id: "buy-movie" do %>
 	          	<!-- <i class="fa fa-lg fa-money" aria-hidden="true"></i> -->
 	          	<!-- <img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497868131/tiket_ty2eow.png" alt="tiket"> -->
-	          	<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497898486/pop_qsvd5j.png" alt="buy-movie">
-	          	<b> <%= movie.price %></b>
+	          	<% if movie.price != nil %>
+		          	<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497898486/pop_qsvd5j.png" alt="buy-movie">
+		          	<b> <%= movie.price/100.0 %>€ </b>
+	          	<% else %>
+		          	<img src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_40/v1497898486/pop_qsvd5j.png" alt="buy-movie">
+	          	<% end %>
 	          <% end %>	
 	          </p>
 	      </div>

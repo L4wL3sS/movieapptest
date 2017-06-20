@@ -6,14 +6,14 @@
 		<div class="col-md-6">
 			<div class="container-fluid text-center" id="paymet-cont">
 				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/v1497898486/pop_qsvd5j.png" alt="buy-movie">
-				<h2> Buy <%= @movie_id.name %> for: <%= @movie_id.price %></h2>
+				<h2> Buy <%= @movie_id.name %> for: <%= @movie_id.price/100.0 %>€</h2>
 			</div>
 		</div>		
 	<% end %>	
 	<%= link_to select_monthly_subscription_path(@movie_id) do %>
 		<div class="col-md-6">
 			<div class="container-fluid text-center" id="paymet-cont">
-				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_250/v1497904785/sub_bya37x.jpg" alt="sub-img">
+				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/c_scale,w_265/v1497944834/subs_m7ueah.png" alt="sub-img">
 				<h2> SUBSCRIBE NOW</h2>
 			</div>
 		</div>	
