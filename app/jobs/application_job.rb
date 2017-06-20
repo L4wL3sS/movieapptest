@@ -12,18 +12,18 @@ class Marketing::OnboardingMailer < ApplicationJob
 		end
 		user.each do |user|
 			begin
-				if user.created_At < 1.hour.ago
+				if user.created_At < 1.minutes.ago		#hour.ago
 					if user.maketing_mailer.blank?
 						user.marketing_mailer = 1
 						user.marketing_mailer_date = Date.today
 						user.save
 						MarketingMailer.onboarding_mailer(user).deliver_now
-					elsif user.marketing_mailer == 1 && user.marketing_mailer_date > 2.days.ago
+					elsif user.marketing_mailer == 1 && user.marketing_mailer_date > 2.minutes.ago		#days.ago
 						user.marketing_mailer = 2
 						user.marketing_mailer_date = Date.today
 						user.save
 						MarketingMailer.onboarding_mailer_second_mailer(user).deliver_now
-					elsif user.marketing_mailer == 2 && user.marketing_mailer_date > 4.days.ago
+					elsif user.marketing_mailer == 2 && user.marketing_mailer_date > 4.minutes.ago		#days.ago
 						user.marketing_mailer = 3
 						user.marketing_mailer_date = Date.today
 						user.save

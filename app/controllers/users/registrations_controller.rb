@@ -15,7 +15,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     super
     if @user.peristed?
       #Marketing::OnboardingMailer.perform_now(@user)
-      Marketing::OnboardingMailer.set(wait: 1.hour).perform_later(@user)
+      Marketing::OnboardingMailer.set(wait: 1.minutes).perform_later(@user)
+      #Marketing::OnboardingMailer.set(wait: 1.hour).perform_later(@user)
   end
 
   # GET /resource/edit

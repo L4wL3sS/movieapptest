@@ -107,8 +107,7 @@ Rails.application.configure do
                           :email_prefix => "[Error app]",
                           :sender_address => %{"notifier" <algo@algo.com>},
                           :exception_recipients => %w{algo@algo.com}
-                        }
-  end
+  }
 
   # AWS variables paperclip/amazon S3
   # config.paperclip_defaults = {
