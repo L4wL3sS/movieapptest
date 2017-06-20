@@ -1,16 +1,22 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
+  devise_for :users, controllers: { registrations: "users/registrations"}
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = current_user
+    #devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    super
+    if @user.peristed?
+      #Marketing::OnboardingMailer.perform_now(@user)
+      Marketing::OnboardingMailer.set(wait: 1.hour).perform_later(@user)
+  end
 
   # GET /resource/edit
   # def edit
@@ -63,6 +69,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
 
 
 end

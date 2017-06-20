@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 1
+  exception_message: MyText
+  tag: MyString
+
+two:
+  user: 1
+  exception_message: MyText
+  tag: MyString

@@ -35,5 +35,11 @@ Rails.application.routes.draw do
 	root 'movies#index', as: 'home'
 	#added for method root_path (search)
 	root :to => "movies#index"
+
+	require 'sidekiq/web'
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
 end
 	

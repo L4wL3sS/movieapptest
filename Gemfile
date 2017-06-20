@@ -24,6 +24,8 @@ gem 'fog'
 gem 'activeadmin', github: 'activeadmin'
 gem 'cancancan', '~> 2.0'
 
+gem 'sidekiq'
+
 #Stripties
 gem 'stripe'
 
