@@ -38,6 +38,8 @@ class ChargesController < ApplicationController
 		@payment.amount = @amount
 		@payment.save
 
+		UserNotifierMailer.send_movie_payment(@user).deliver_now
+
 	#Daria algun error con rescue? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 	flash[:success] = t('payment.create_success')
   	redirect_to settings_path
