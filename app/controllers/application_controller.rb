@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   #before_action :authenticate_user!
 
   # add camps to users before check 29/05 USERNAME REQUIRE
-  before_filter :sanitize_devise_params, if: :devise_controller?
+  before_action :sanitize_devise_params, if: :devise_controller?
   def sanitize_devise_params
   	devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
   end

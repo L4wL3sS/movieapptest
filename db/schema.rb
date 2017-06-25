@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620114623) do
+ActiveRecord::Schema.define(version: 20170625214929) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 20170620114623) do
     t.datetime "updated_at",                          null: false
     t.string   "username"
     t.integer  "marketing_mailer"
-    t.date     "marketing_mailer_date"
+    t.datetime "marketing_mailer_date"
     t.string   "locale"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

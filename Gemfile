@@ -26,6 +26,9 @@ gem 'cancancan', '~> 2.0'
 
 gem 'sidekiq'
 
+#Variables de entorno
+gem 'dotenv-rails', groups: [:development, :test]
+
 #Stripties
 gem 'stripe'
 

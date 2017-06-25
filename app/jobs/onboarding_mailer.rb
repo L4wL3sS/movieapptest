@@ -11,7 +11,7 @@ class OnboardingMailer < ApplicationJob
 		end
 		user.each do |user|
 			#begin
-				if user.created_at < 2.hour.ago
+				if user.created_at < 2.hours.ago
 					if user.marketing_mailer.blank?
 						user.marketing_mailer = 1
 						user.marketing_mailer_date = DateTime.current
