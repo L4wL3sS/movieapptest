@@ -101,12 +101,12 @@ Rails.application.configure do
     password: ENV["MAILER_PASSWORD"]
   }
 
-  config.middleware.use ExceptionNotification::Rack,
-                        :email => {
-                          :email_prefix => "[Error app]",
-                          :sender_address => %{"notifier" <algo@algo.com>},
-                          :exception_recipients => %w{algo@algo.com}
-  }
+  # config.middleware.use ExceptionNotification::Rack,
+  #                       :email => {
+  #                         :email_prefix => "[Error app]",
+  #                         :sender_address => %{"notifier" <algo@algo.com>},
+  #                         :exception_recipients => %w{algo@algo.com}
+  # }
 
   # AWS variables paperclip/amazon S3
   # config.paperclip_defaults = {
