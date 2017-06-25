@@ -13,9 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
     super
-    if @user.peristed?
+    #if @user.peristed?
       #Marketing::OnboardingMailer.perform_now(@user)
-      Marketing::OnboardingMailer.set(wait: 1.minutes).perform_later(@user)
+      #Marketing::OnboardingMailer.set(wait: 1.minutes).perform_later(@user)
       #Marketing::OnboardingMailer.set(wait: 1.hour).perform_later(@user)
   end
 
