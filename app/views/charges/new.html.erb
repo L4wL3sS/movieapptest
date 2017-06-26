@@ -6,7 +6,7 @@
       </div>
     <% end %>
     <label class="amount">
-      <span>Amount: <%= @amount/100.0 %> €</span>
+      <span>Amount: <%= @amount.to_f/100.0 %> €</span>
     </label>
   </article>
 
@@ -25,4 +25,7 @@
 </script>
 
 <% end %>
+
+<!-- 
 <%= debug params %>
+ -->
