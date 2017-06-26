@@ -2,7 +2,7 @@
 <br>
 
 	<div class="row">
-	<%= link_to new_charge_path(amount: @movie_id.price) do %>
+	<%= link_to new_charge_path(amount: @movie_id.price, user: current_user) do %>
 		<div class="col-md-6">
 			<div class="container-fluid text-center" id="paymet-cont">
 				<img class="img-responsive" src="http://res.cloudinary.com/lawless/image/upload/v1497898486/pop_qsvd5j.png" alt="buy-movie">

@@ -2,6 +2,8 @@ class ChargesController < ApplicationController
 	before_action :authenticate_user!
 	
 	def new
+		@user = User.find(params[:user])
+		@@user = @user
 		@amount = 500
 		@@amount = @amount
 	  if params[:amount]
@@ -13,7 +15,7 @@ class ChargesController < ApplicationController
 	def create
 	# Amount in cents 500cents = 5$
 	  @amount = @@amount 
-
+	  @user = @@user
 	  customer = Stripe::Customer.create(
 	    :email => params[:stripeEmail],
 	    :source  => params[:stripeToken]
