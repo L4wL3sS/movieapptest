@@ -71,6 +71,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # control de errores para localhost
   gem 'better_errors'
+  # Make sure you’re on a trusted network if you’re going to use this gem as you don’t want malicious users accessing your Rails application this way. 
+  gem 'binding_of_caller'
 end
 
 group :development do
