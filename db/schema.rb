@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20170625214929) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.boolean  "subscription"
-    t.string   "channel"d
+    t.string   "channel"
     t.integer  "active"
     t.boolean  "plan"
     t.bigint   "amount"

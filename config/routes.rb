@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'payments/index'
+
   #get 'payment_select/select_plan'
   get '/select_plan' => 'payment_select#select_plan', as: :select_plan
   #get 'payment_select/select_monthly_subscription'
@@ -27,6 +29,7 @@ Rails.application.routes.draw do
 		resources :reviews
 	end
 	
+	resources :payments
   resources :settings
   resources :charges
 	resources :select_movies, only: :index

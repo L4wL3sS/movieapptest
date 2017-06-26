@@ -1,0 +1,33 @@
+<style type="text/css">
+	.table-striped{
+		background-color: white;
+		border-radius: 3px;
+	}
+</style>
+<h2>Payments</h2>
+<br>
+<div class="container">            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Subscription:</th>
+        <th>Plan</th>
+        <th>Channel</th>
+        <th>Payment active</th>
+        <th>Amount payed</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<%@payment.each do |payment|%>
+      <tr>				
+					<td><%= payment.subscription %></td>
+					<td><%= payment.plan %></td>
+					<td><%= payment.channel %></td>					
+					<td><%= payment.active %></td>
+					<td><%= payment.amount %></td>					
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+<br>

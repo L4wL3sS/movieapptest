@@ -14,7 +14,10 @@
 				<p><b>Unlimited</b> Domains</p>
 				<p><b>Free</b> Billing Systems</p>
 				<div class="footer">
-					<button calss="btn btn-defautl" type="button">SIGN UP</button>
+					<!-- <button calss="btn btn-defautl" type="button">SIGN UP</button> -->
+					<%= link_to new_charge_path(plan: "bronze", user: current_user) do %>
+						<button calss="btn btn-defautl" type="button">SIGN UP</button>
+					<% end %>
 				</div>
 			</div>
 		</div><!-- END Box1 -->
@@ -32,7 +35,10 @@
 				<p><b>Unlimited</b> Domains</p>
 				<p><b>Free</b> Billing Systems</p>
 				<div class="footer">
-					<button calss="btn btn-defautl" type="button">SIGN UP</button>
+					<!-- <button calss="btn btn-defautl" type="button">SIGN UP</button> -->
+					<%= link_to new_charge_path(plan: "silver", user: current_user) do %>
+						<button calss="btn btn-defautl" type="button">SIGN UP</button>
+					<% end %>
 				</div>
 			</div>
 		</div><!-- END Box2 -->
@@ -50,7 +56,10 @@
 				<p><b>Unlimited</b> Domains</p>
 				<p><b>Free</b> Billing Systems</p>
 				<div class="footer">
-					<button calss="btn btn-defautl" type="button">SIGN UP</button>
+					<!-- <button calss="btn btn-defautl" type="button">SIGN UP</button> -->
+					<%= link_to new_charge_path(plan: "gold", user: current_user) do %>
+						<button calss="btn btn-defautl" type="button">SIGN UP</button>
+					<% end %>
 				</div>
 			</div>
 		</div><!-- END Box3 -->

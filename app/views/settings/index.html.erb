@@ -57,21 +57,26 @@
 			<% if !@payment.nil? %>
 				<h2>Payments</h2>
 				<%@payment.each do |payment|%>
-					<p><b>Subscription active:</b></p>
-					<p><%= payment.subscription %></p>
-					<p><b>Payment Channel:</b></p>
-					<p><%= payment.channel %></p>
-					<p><b>Payment active:</b></p>
-					<p><%= payment.active %></p>
-					<p><b>Plan:</b></p>
-					<p><%= payment.plan %></p> 
+					<!-- <p><b>Subscription active:</b></p> -->
+					<!-- <p><%= payment.subscription %></p> -->
+					<!-- <p><b>Payment Channel:</b></p> -->
+					<!-- <p><%= payment.channel %></p> -->
+					<!-- <p><b>Payment active:</b></p> -->
+					<!-- <p><%= payment.active %></p> -->
+					<!-- <p><b>Plan:</b></p> -->
+					<!-- <p><%= payment.plan %></p>  -->
 					<p><b>Amount payed:</b></p>
-					<p><%= payment.amount %></p>
+					<p><%= payment.amount/100.0 %></p>
 					<hr>				
 				<%end%>
+		</div>
+		<%= link_to payments_path do %>
+			<li class="righty">Show</li>
+		<% end %>
+		
 			<%end%>
 
-		</div>
+		
 	</div>
 			
 	<div class="col-xs-12 col-md-8">
