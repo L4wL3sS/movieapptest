@@ -6,6 +6,10 @@ class MoviesController < ApplicationController
 	def index
 		@movies = Movie.all
 
+		#CONTROL DE ERRORES EJEMPLO
+		# puts "=" * 100
+		# puts @pelicula
+		# puts "=" * 100
  		
 		if params[:search]
 			@movies = Movie.search(params[:search]).order("created_at DESC")

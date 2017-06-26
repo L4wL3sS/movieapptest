@@ -7,6 +7,39 @@ class SettingsController < ApplicationController
 	    
 	    @payment = current_user.payments
 	    
+	    #CONTROL DE ERRORES!!!! EJEMPLO
+	 #    puts "=" * 100
+	 #    puts current_user.id
+	 #    puts current_user.id == 1
+		# puts "=" * 100
+
+		#----------------------------------------------------------
+
+	 #    puts "=" * 100
+	 #    @menjar = "empty meal"
+	 #    if @seting.country == "Spain"
+	 #    	@menjar ="tapas"
+	 #    elsif @setting.country == "Andorra"
+	 #    	@menjar ="sopa"
+	 #    else
+	 #    	@menjar = "\tburger"
+	 #    end
+	 #    puts "=" * 100
+	 #    puts @menjar
+		# puts "=" * 100
+
+		#----------------------------------------------------------
+
+	    # puts "=" * 100
+
+	    # if @setting.country == "Spain"
+	    # 	puts "Si"
+	    # else
+	    # 	puts "No"
+	    # 	puts "Current: " + @setting.country
+	    # end
+	    # puts "=" * 100
+
 	    #didn't worck for me T_T?
 	    # @payment = []
 	    # if current_user.payments.exists?
