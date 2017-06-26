@@ -11,7 +11,7 @@ class OnboardingMailer < ApplicationJob
 		end
 		user.each do |user|
 			#begin
-				if user.created_at < 10.hours.ago
+				#if user.created_at < 10.hours.ago
 					if user.marketing_mailer.blank?
 						user.marketing_mailer = 1
 						user.marketing_mailer_date = DateTime.current
@@ -31,7 +31,7 @@ class OnboardingMailer < ApplicationJob
 						UserNotifierMailer.send_signup_email_third(user).deliver_now #perform_later
 						#MarketingMailer.onboarding_mailer_third_mailer(user).deliver_now	
 					end
-				end
+				#end
 			# rescue => e
 			# 	message = "user-#{user.id} \n\t#{e.message}\n\n \t#{e.backtrace.join("\n\t")}"
 			# 	LogManager.create(:user=>user.id,:exception_message=>message,:tag=>"MailerError")

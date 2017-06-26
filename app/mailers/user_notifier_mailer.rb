@@ -6,14 +6,14 @@ class UserNotifierMailer < ApplicationMailer
   def send_signup_email(user)
       @user = user
       mail( :to => @user.email,
-      bcc: "mp.didac1989@gmail.com",
+      #bcc: "mp.didac1989@gmail.com",
       :subject => 'Thanks for signing up on our amazing app' )
   end
 
   def send_signup_email_second(user)
       @user = user
       mail( :to => @user.email,
-      bcc: "mp.didac1989@gmail.com",
+      #bcc: "mp.didac1989@gmail.com",
       :subject => 'Thanks for signing up on our amazing app' )
     
   end
@@ -21,7 +21,7 @@ class UserNotifierMailer < ApplicationMailer
   def send_signup_email_third(user)
       @user = user
       mail( :to => @user.email,
-      bcc: "mp.didac1989@gmail.com",
+      #bcc: "mp.didac1989@gmail.com",
       :subject => 'Thanks for signing up on our amazing app' )
     
   end
@@ -29,7 +29,7 @@ class UserNotifierMailer < ApplicationMailer
   def send_movie_payment(user)
     @user = user
     mail( :to => @user.email,
-    bcc: "mp.didac1989@gmail.com",
+    #bcc: "mp.didac1989@gmail.com",
     :subject => 'Thanks for buying in our amazing app' )
   end
 end
